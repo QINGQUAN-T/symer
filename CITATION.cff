@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use symer, please cite it using this metadata."
+title: "symer: 符号核 v0 —— 链式两步配对过程的统一符号引擎（聚合/谣言两家族）"
+abstract: >-
+  可配置的符号动力学内核：同一套引擎覆盖逐步聚合（AA+BB 缩聚，Flory/Carothers
+  家族）与两阶段谣言传播（Maki–Thompson/Daley–Kendall 改良）两类系统。核心是
+  载体因子在轨迹方程中的完全消去：合并层 dS/di = -1 + mu*S/i（共振线 mu=1），
+  职业层 ds1/di = -1 + gamma*s1/i, gamma = alpha+mu（共振线 gamma=1）。
+  冻结库存律 (x1,x2) = (mu,alpha)/(alpha+mu) 为精确定理（W2，闸门2以0.61%通过）。
+  含回归锚点（Carothers 方程、Flory D=2、原文轨迹式）与 Gillespie SSA 数值核。
+authors:
+  - family-names: Tang
+    given-names: Qingquan
+    affiliation: "Wuhan Textile University, Wuhan, China"
+    orcid: "https://orcid.org/0000-0002-1519-1570"
+version: v0.1.0
+date-released: "2026-10-09"
+license: MIT
+repository-code: "https://github.com/QINGQUAN-T/symer"
+keywords:
+  - statistical mechanics
+  - rumor spreading
+  - polymerization
+  - exactly solvable
+  - Gillespie algorithm
+  - physics and society

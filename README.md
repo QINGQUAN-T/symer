@@ -1,5 +1,8 @@
 # symer —— 链式两步配对过程的符号核 v0
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23282847.svg)](https://doi.org/10.5281/zenodo.23282847)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 [English version](README.en.md)
 
 **symer** is a configurable symbolic-dynamics kernel: one engine covers both
@@ -10,7 +13,8 @@ the trajectory equations, leaving closed-form, fit-free laws — e.g. the frozen
 inventory law $(x_1,x_2)=(\mu,\alpha)/(\alpha+\mu)$, inverted linearly to
 recover $\alpha$ from real cascade ledgers (Higgs-Twitter: $\hat\alpha\le0.44\%$,
 95% CI). Companion paper: *Three laws of the two-stage rumor cascade*
-(preprint; DOI placeholder). 48 regression tests, all passing.
+(preprint; code archived on Zenodo, DOI badge above). 48 regression tests,
+all passing.
 
 可配置的符号动力学内核：同一套引擎同时覆盖**逐步聚合**（AA+BB 缩聚，
 Flory/Carothers 家族）与**两阶段谣言传播**（Maki–Thompson/Daley–Kendall
@@ -92,11 +96,14 @@ python3 cli/x1_invert.py --activity <activity_time.txt.gz> --rtype RT \
 ## 复现与数据
 
 - **论文数值**：论文中每一个数字都可由发布脚本复现（全部随机种子、参数
-  网格、原始日志与结构化输出随 Zenodo 归档包发布；DOI 见 Release 说明）。
+  网格、原始日志与结构化输出随 Zenodo 归档包发布：
+  [10.5281/zenodo.23282848](https://doi.org/10.5281/zenodo.23282848)，即
+  Release v0.1.0 的归档）。
 - **真实级联数据**：`cli/x1_invert.py` 默认读取
   [SNAP Higgs-Twitter](https://snap.stanford.edu/data/higgs-twitter.html)
   的 `higgs-activity_time.txt.gz`（354,930 转推事件，298 条多用户级联）。
-- **引用**：见 `CITATION.cff`；Zenodo DOI 于首个 Release 后自动铸造。
+- **引用**：见 `CITATION.cff`。引用本版本：
+  **Tang, Q. (2026). symer: 符号核 v0（聚合/谣言两家族的统一符号引擎）. Zenodo. [10.5281/zenodo.23282848](https://doi.org/10.5281/zenodo.23282848)**；全版本概念 DOI：[10.5281/zenodo.23282847](https://doi.org/10.5281/zenodo.23282847)。
 
 ## 许可
 

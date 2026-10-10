@@ -1,5 +1,8 @@
 # symer — Symbolic Kernel for Two-Step Pairing Processes
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23282847.svg)](https://doi.org/10.5281/zenodo.23282847)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 [中文说明](README.md)
 
 **symer** is a configurable symbolic-dynamics kernel: one engine covers both
@@ -58,5 +61,10 @@ examples/   demo_deviations.py
 
 ## Citation
 
-See `CITATION.cff`. A Zenodo DOI is minted on the first GitHub release.
-License: MIT.
+**Tang, Q. (2026). *symer*: symbolic kernel v0 for chained two-step pairing
+processes (aggregation / rumor families). Zenodo.
+[10.5281/zenodo.23282848](https://doi.org/10.5281/zenodo.23282848)** —
+version DOI for release v0.1.0; concept DOI (all versions):
+[10.5281/zenodo.23282847](https://doi.org/10.5281/zenodo.23282847).
+Machine-readable metadata: `CITATION.cff`. License: MIT.
+

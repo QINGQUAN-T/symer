@@ -13,15 +13,15 @@ authors:
     given-names: Qingquan
     affiliation: "Wuhan Textile University, Wuhan, China"
     orcid: "https://orcid.org/0000-0002-1519-1570"
-version: v0.1.0
-date-released: "2026-10-10"
+version: v0.1.2
+date-released: "2026-10-18"
 license: MIT
 repository-code: "https://github.com/QINGQUAN-T/symer"
 doi: 10.5281/zenodo.23282848
 identifiers:
-  - description: Zenodo archive of release v0.1.0
+  - description: Zenodo archive of release v0.1.1 (review-revision scripts)
     type: url
-    value: https://zenodo.org/records/23282848
+    value: https://zenodo.org/records/23282848 # FIXME: replace with the NEW version record DOI minted for v0.1.1
   - description: Concept DOI (all versions of symer)
     type: doi
     value: 10.5281/zenodo.23282847

@@ -22,16 +22,19 @@ equations dY/dX, leaving closed-form, parameter-free laws:
 
 **Frozen inventory law** (exact theorem): terminal spreader-pool composition
 (x₁, x₂) = (μ, α)/(α+μ), independent of seed size — invertible linearly as
-α̂ = μ·x̂₂/x̂₁. Verified SSA (N = 6×10⁴): max deviation 0.61%. On real
-Twitter cascades (Higgs-Twitter, SNAP; 354,930 retweet events): identity-check
-intercept 1.08 (theory +1), α̂ ≤ 0.44% (95% CI) — field arming channel is two
-orders of magnitude weaker than recruitment.
+α̂ = μ·x̂₂/x̂₁. Verified SSA (N = 6×10⁴, 6 seeds/cell): max deviation 0.95%
+(x₁ caliber; ≤0.32% for the x₂-share caliber, at the Monte-Carlo floor).
+On real Twitter cascades (Higgs-Twitter, SNAP; 354,930 retweet events):
+identity-check intercept 1.08 (theory +1), pooled α̂ = 2.21% (joint
+cascade-level cluster-bootstrap 95% CI [1.63%, 2.95%]; per-cascade median 0
+with bootstrap upper end 0.41%) — field arming channel ≈60× below recruitment
+nominal, ≈40× after the Sec. 7.3 calibration correction.
 
 ## Install & run
 
 ```bash
 pip install -r requirements.txt
-python run_tests.py                                # 48 regression tests
+python run_tests.py                                # 49 regression tests
 python examples/demo_deviations.py                 # model-locking demo
 RUMOR_STAGE=sym python tests/test_rumor_gate1.py   # symbolic block only
 ```
@@ -50,21 +53,30 @@ bootstrap bands. Data: [SNAP Higgs-Twitter](https://snap.stanford.edu/data/higgs
 ## Layout
 
 ```
-symer/      spec.py (channels/conservation) · engine.py (trajectory + carrier
-            cancellation + closed forms) · configs/polymer.py, rumor.py
+symer/symer/  spec.py (channels/conservation) · engine.py (trajectory +
+            carrier cancellation + closed forms) · configs/polymer.py,
+            rumor.py
 tests/      16 polymer anchors (Carothers, Flory Đ=2, trajectory identities)
-            + 32 rumor tests (closed forms, α-blindness, frozen inventory,
-            ODE/SSA cross-validation)
+            + 33 rumor tests (closed forms, α-blindness, frozen inventory,
+            ODE/SSA cross-validation, ledger conservation)
 cli/        x1_invert.py — frozen-inventory inversion on cascade archives
 examples/   demo_deviations.py
+scripts/    v0.1.1: review-revision reproduction scripts (simulation
+            validation, negative controls, network CI, g* phase analysis,
+            Figs. 9–10) + shared engine w3_lib.py / inversion w5_invert.py
+results/    reference JSON outputs (source of every number in the paper)
+logs/       raw run logs (seeds 20261009–20261012)
 ```
+
+Run (see `data_README.md` for the SNAP Higgs-Twitter download step):
+`python3 scripts/w7_gstar.py` (no data needed) · `scripts/w7_sim_archives.py` ·
+`scripts/w7_network_ci.py`.
 
 ## Citation
 
 **Tang, Q. (2026). *symer*: symbolic kernel v0 for chained two-step pairing
-processes (aggregation / rumor families). Zenodo.
-[10.5281/zenodo.23282848](https://doi.org/10.5281/zenodo.23282848)** —
-version DOI for release v0.1.0; concept DOI (all versions):
+processes (aggregation / rumor families). Zenodo.**
+Base archive (v0.1.0): [10.5281/zenodo.23282848](https://doi.org/10.5281/zenodo.23282848);
+v0.1.1 version DOI: see the Release page; concept DOI (all versions):
 [10.5281/zenodo.23282847](https://doi.org/10.5281/zenodo.23282847).
 Machine-readable metadata: `CITATION.cff`. License: MIT.
-

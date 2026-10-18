@@ -1,0 +1,16 @@
+== A) exponent CI (Poisson, mu=0.5, alpha=1, N=2e4) ==
+  <k>=4: dev=11.98% ± 0.18
+  <k>=6: dev=9.84% ± 0.21
+  <k>=8: dev=8.47% ± 0.27
+  <k>=12: dev=6.49% ± 0.34
+  <k>=20: dev=4.27% ± 0.37
+  <k>=40: dev=2.36% ± 0.33
+  exponent = -0.713 [-0.808, -0.544] (95%)
+== B) parameter scan (<k>=8) ==
+  mu0.5: dev=8.53% ± 0.16
+  mu1: dev=11.75% ± 0.42
+  mu2: dev=13.68% ± 1.02
+  a0.5: dev=13.30% ± 0.19
+  a3: dev=3.37% ± 0.28
+  N5e3: dev=7.87% ± 0.99
+-> results/w7_network_ci.json

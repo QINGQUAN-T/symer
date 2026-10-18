@@ -1,0 +1,36 @@
+mu=0.5: plateau=1.0006 [1.0002,1.0013]
+mu=1.0: plateau=0.9658 [0.9613,0.9717]
+mu=2.0: plateau=1.0003 [1.0001,1.0006]
+-> results/w3_law1_data.json
+mu=0.5 a=0.5 eps=60: dev_x1=-0.257% dev_share=+0.255%
+mu=0.5 a=0.5 eps=600: dev_x1=-0.036% dev_share=+0.034%
+mu=0.5 a=0.5 eps=6000: dev_x1=+0.279% dev_share=-0.281%
+mu=0.5 a=1.0 eps=60: dev_x1=+0.032% dev_share=-0.017%
+mu=0.5 a=1.0 eps=600: dev_x1=-0.224% dev_share=+0.111%
+mu=0.5 a=1.0 eps=6000: dev_x1=+0.126% dev_share=-0.064%
+mu=0.5 a=2.0 eps=60: dev_x1=+0.954% dev_share=-0.239%
+mu=0.5 a=2.0 eps=600: dev_x1=+0.315% dev_share=-0.079%
+mu=0.5 a=2.0 eps=6000: dev_x1=-0.226% dev_share=+0.056%
+mu=1.0 a=0.5 eps=60: dev_x1=-0.024% dev_share=+0.044%
+mu=1.0 a=0.5 eps=600: dev_x1=+0.006% dev_share=-0.015%
+mu=1.0 a=0.5 eps=6000: dev_x1=-0.090% dev_share=+0.177%
+mu=1.0 a=1.0 eps=60: dev_x1=+0.047% dev_share=-0.048%
+mu=1.0 a=1.0 eps=600: dev_x1=+0.087% dev_share=-0.089%
+mu=1.0 a=1.0 eps=6000: dev_x1=-0.109% dev_share=+0.108%
+mu=1.0 a=2.0 eps=60: dev_x1=+0.167% dev_share=-0.085%
+mu=1.0 a=2.0 eps=600: dev_x1=+0.635% dev_share=-0.318%
+mu=1.0 a=2.0 eps=6000: dev_x1=-0.097% dev_share=+0.048%
+mu=2.0 a=0.5 eps=60: dev_x1=+0.043% dev_share=-0.179%
+mu=2.0 a=0.5 eps=600: dev_x1=+0.051% dev_share=-0.212%
+mu=2.0 a=0.5 eps=6000: dev_x1=+0.012% dev_share=-0.055%
+mu=2.0 a=1.0 eps=60: dev_x1=-0.012% dev_share=+0.020%
+mu=2.0 a=1.0 eps=600: dev_x1=-0.045% dev_share=+0.086%
+mu=2.0 a=1.0 eps=6000: dev_x1=+0.107% dev_share=-0.217%
+mu=2.0 a=2.0 eps=60: dev_x1=+0.139% dev_share=-0.141%
+mu=2.0 a=2.0 eps=600: dev_x1=-0.104% dev_share=+0.102%
+mu=2.0 a=2.0 eps=6000: dev_x1=+0.060% dev_share=-0.062%
+-> results/w3_law2_data.json  max|dev|=0.954% (闸门 ±2%)
+mu=0.5: slope=1.9483 (pred 2.0000), amp=0.6647
+mu=1.5: slope=1.0014 (pred 1.0000), amp=0.3438
+mu=2.0: slope=0.9736 (pred 1.0000), amp=0.4164
+-> results/w3_smallg_data.json

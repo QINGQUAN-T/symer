@@ -1,0 +1,50 @@
+graph0 seed0 alpha=0.5: i_f/N=0.0227 x2_share=0.4416
+graph0 seed1 alpha=0.5: i_f/N=0.0251 x2_share=0.4383
+graph0 seed2 alpha=0.5: i_f/N=0.0271 x2_share=0.4364
+graph0 seed3 alpha=0.5: i_f/N=0.0247 x2_share=0.4353
+graph0 seed0 alpha=3.0: i_f/N=0.0230 x2_share=0.8295
+graph0 seed1 alpha=3.0: i_f/N=0.0237 x2_share=0.8341
+graph0 seed2 alpha=3.0: i_f/N=0.0253 x2_share=0.8197
+graph0 seed3 alpha=3.0: i_f/N=0.0270 x2_share=0.8297
+graph1 seed0 alpha=0.5: i_f/N=0.0230 x2_share=0.4417
+graph1 seed1 alpha=0.5: i_f/N=0.0251 x2_share=0.4352
+graph1 seed2 alpha=0.5: i_f/N=0.0246 x2_share=0.4290
+graph1 seed3 alpha=0.5: i_f/N=0.0241 x2_share=0.4416
+graph1 seed0 alpha=3.0: i_f/N=0.0244 x2_share=0.8292
+graph1 seed1 alpha=3.0: i_f/N=0.0254 x2_share=0.8334
+graph1 seed2 alpha=3.0: i_f/N=0.0251 x2_share=0.8252
+graph1 seed3 alpha=3.0: i_f/N=0.0271 x2_share=0.8229
+graph2 seed0 alpha=0.5: i_f/N=0.0241 x2_share=0.4346
+graph2 seed1 alpha=0.5: i_f/N=0.0244 x2_share=0.4326
+graph2 seed2 alpha=0.5: i_f/N=0.0245 x2_share=0.4374
+graph2 seed3 alpha=0.5: i_f/N=0.0255 x2_share=0.4362
+graph2 seed0 alpha=3.0: i_f/N=0.0263 x2_share=0.8229
+graph2 seed1 alpha=3.0: i_f/N=0.0240 x2_share=0.8243
+graph2 seed2 alpha=3.0: i_f/N=0.0244 x2_share=0.8266
+graph2 seed3 alpha=3.0: i_f/N=0.0241 x2_share=0.8282
+graph3 seed0 alpha=0.5: i_f/N=0.0257 x2_share=0.4377
+graph3 seed1 alpha=0.5: i_f/N=0.0264 x2_share=0.4413
+graph3 seed2 alpha=0.5: i_f/N=0.0217 x2_share=0.4368
+graph3 seed3 alpha=0.5: i_f/N=0.0266 x2_share=0.4363
+graph3 seed0 alpha=3.0: i_f/N=0.0255 x2_share=0.8275
+graph3 seed1 alpha=3.0: i_f/N=0.0245 x2_share=0.8252
+graph3 seed2 alpha=3.0: i_f/N=0.0236 x2_share=0.8274
+graph3 seed3 alpha=3.0: i_f/N=0.0255 x2_share=0.8289
+-> results/w6_network_ledger_data.json
+{
+ "a0.5": {
+  "i_f_N_med": 0.024634235978190606,
+  "x2_share_med": 0.43659752900062887,
+  "x2_share_mean": 0.43699661502515885,
+  "law_share": 0.5,
+  "x2_share_dev_pct": -12.600676994968229
+ },
+ "a3": {
+  "i_f_N_med": 0.024786749458901074,
+  "x2_share_med": 0.827479032239901,
+  "x2_share_mean": 0.8271717342427973,
+  "law_share": 0.8571428571428571,
+  "x2_share_dev_pct": -3.4966310050069724
+ },
+ "ci_overlap_frac": 1.0
+}

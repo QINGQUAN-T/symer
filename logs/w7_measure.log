@@ -1,0 +1,9 @@
+data: higgs-activity.txt.gz
+RT events: 354930 | sources: 41426 | t_end(h): 372696.0
+  theta=2.0h: n=328 x2=0.0192 mu=1.596 ic=0.41 a_pool=0.0312 CI=[0.0250,0.0384]
+  theta=6.0h: n=298 x2=0.0158 mu=1.373 ic=1.08 a_pool=0.0221 CI=[0.0163,0.0295]
+  theta=24.0h: n=126 x2=0.0118 mu=0.324 ic=1.04 a_pool=0.0039 CI=[0.0021,0.0061]
+-> results/w7_measure.json
+RE events: 36902 | sources: 18586
+  theta=6.0h: n=8 x2=0.0253 mu=0.979 ic=0.96 a_pool=0.0255 CI=[0.0106,0.1004]
+-> results/w5_main_results.json

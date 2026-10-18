@@ -1,0 +1,69 @@
+
+===== 聚合物回归锚点 =====
+[PASS] T3a 载体 [A] 完全消去 
+[PASS] T3b 轨迹方程 = -1 + (alpha/2) b1/b0 slope = (alpha*b1/2 - b0)/b0
+[PASS] T3c 闭式解 == 原文(6)（IC + 数值采样 + 残差） sol = 2*(b0 - exp(alpha*log(b0)/2))/(alpha - 2)
+[PASS] T3d 残差恒 0 
+[PASS] T3e alpha=2 对数尾 == -b0 ln b0 sol2 = -b0*log(b0)
+[PASS] T3f alpha=2 残差恒 0 
+[PASS] T1a Xn=(1+r)/(1+r-2pB) 恒等（r=1 退化为 1/(1-p)） 
+[PASS] T1b alpha=1 时 pB = 1 - sqrt(b0) 
+[PASS] T1c 冻结线配置 2b0+b1=2(1-r) 
+[PASS] T1d alpha=1 冻结: b1f = 2r(1-r) 
+[PASS] T1e alpha=3,r=0.9 冻结 b0f≈0.05676 0.056762
+[PASS] T1f alpha=3,r=0.9 冻结 b1f≈0.08648 0.086477
+[PASS] T1g alpha=3,r=0.9 终态 Xn=19 19.0
+[PASS] T2a alpha=1,r=1: Đ = 1+p（SI 强测试 T1） Đ = p + 1
+[PASS] T2b p->1 极限 Đ = 2（Flory 最可几分布） limit = 2
+[PASS] T2c SI 数值锚点 Xw(r=0.8,pB=0.45)=3.016736 3.016736
+
+聚合物锚点：16/16 通过
+
+===== 谣言 Gate-1 符号段 =====
+[PASS] R1a 载体 S=s1+s2 完全消去 
+[PASS] R1b 职业层轨迹方程 = -1 + (alpha+mu) s1/i slope = (alpha*s1 - i + mu*s1)/i
+[PASS] R2a 合并层 dS/dt = k1 S i - k2 S^2 
+[PASS] R2b alpha 盲（d(dS/dt)/d alpha = 0） 
+[PASS] R2c 合并层与 S1/S2 分工无关 
+[PASS] R3 合并层轨迹 = -1 + mu S/i（聚合物家族同构，alpha/2 <-> mu） dS/di = (-i + mu*s1 + mu*s2)/i
+[PASS] R4a 闭式解 = C1 i^gamma - i/(1-gamma)（符号或数值采样） sol = (alpha*epsilon*exp((alpha + mu)*log(i)) + epsilon*mu*exp((alpha + mu)*log(i)) + i*exp((alpha + mu)*log(1 - epsilon)) - exp((alpha + mu)*log(i)))*exp(-(alpha + mu)*log(1 - epsilon))/(alpha + mu - 1)
+[PASS] R4b 残差恒 0 
+[PASS] R4c gamma=1 对数支 s1 = i(C1 - ln i) sol1 = i*(-epsilon*log(i) + epsilon*log(1 - epsilon) - epsilon + log(i) - log(1 - epsilon))/(epsilon - 1)
+[PASS] R4d gamma=1 残差恒 0 
+[PASS] R5a x1 = mu/(alpha+mu) x1 = mu/(alpha + mu)
+[PASS] R5b 库存律与种子 epsilon 无关 
+[PASS] R5c gamma=1 极限 x1 -> mu（对数支连续） limit = mu
+
+谣言 Gate-1[sym]：13/13 通过
+
+===== 谣言 Gate-1 数值段 =====
+[PASS] R6a(alpha=0.8, mu=0.3, eps=0.001) mu<1 渐近饱和（数值 i 低于 1e-8；无有限时刻冻结） t_end=592.107
+[PASS] R6b(alpha=0.8, mu=0.3, eps=0.001) 冻结库存 x1=mu/gamma x1=0.27272725 vs 0.27272727
+[PASS] R6c(alpha=0.8, mu=0.3, eps=0.001) 冻结库存 x2=alpha/gamma（含解析尾修正） x2=0.72158551+tail5.69e-03 vs 0.72727273
+[PASS] R6d(alpha=0.8, mu=0.3, eps=0.001) 闭式解沿轨迹最大偏差 < 1e-7 max|ds1|=5.62e-13
+[PASS] R6a(alpha=0.6, mu=0.4, eps=0.001) mu<1 渐近饱和（数值 i 低于 1e-8；无有限时刻冻结） t_end=2385.736
+[PASS] R6b(alpha=0.6, mu=0.4, eps=0.001) 冻结库存 x1=mu/gamma x1=0.39999992 vs 0.40000000
+[PASS] R6c(alpha=0.6, mu=0.4, eps=0.001) 冻结库存 x2=alpha/gamma（含解析尾修正） x2=0.59894849+tail1.05e-03 vs 0.60000000
+[PASS] R6d(alpha=0.6, mu=0.4, eps=0.001) 闭式解沿轨迹最大偏差 < 1e-7 max|ds1|=4.19e-13
+[PASS] R6a(alpha=2.0, mu=0.5, eps=0.01) mu<1 渐近饱和（数值 i 低于 1e-8；无有限时刻冻结） t_end=10013.367
+[PASS] R6b(alpha=2.0, mu=0.5, eps=0.01) 冻结库存 x1=mu/gamma x1=0.20000000 vs 0.20000000
+[PASS] R6c(alpha=2.0, mu=0.5, eps=0.01) 冻结库存 x2=alpha/gamma（含解析尾修正） x2=0.79980001+tail2.00e-04 vs 0.80000000
+[PASS] R6d(alpha=2.0, mu=0.5, eps=0.01) 闭式解沿轨迹最大偏差 < 1e-7 max|ds1|=1.72e-17
+[PASS] R7a mu>1 不发生有限时刻饱和 i(t_max)=2.00e-05
+[PASS] R7b 代数尾 S/i -> 1/(mu-1)=1 S/i=0.999980
+[PASS] R7c 代数尾 s1/i -> 1/(gamma-1) s1/i=0.666667 vs 0.666667
+[PASS] R7d 账本 x1 -> mu/gamma（尾部通量可忽略） x1=0.799973 vs 0.800000
+[PASS] R7e 账本 x2 -> alpha/gamma x2=0.199987 vs 0.200000
+
+谣言 Gate-1[num]：17/17 通过
+
+===== 谣言 Gate-1 SSA 段 =====
+[PASS] R8a SSA 职业构成 x2/(x1+x2) ≈ alpha/(alpha+mu)（±3%） x2份=0.6644 vs 律=0.6667
+[PASS] R8b SSA 终态无知者占比小（mu<1 近饱和） i_f/N = 0.0000
+[PASS] R8b2 SSA 终态账本守恒 x1+x2=N-1（定理 8，有限 N 恰余一个传播者） x1+x2=239996 vs (N-1)*seeds=239996
+      SSA 详情: N=60000, seeds=4, i_f/N=0.0000, x1=80539, x2=159457
+
+谣言 Gate-1[ssa]：3/3 通过
+
+==============================================
+全部回归通过 —— 闸门 1 正式关闭

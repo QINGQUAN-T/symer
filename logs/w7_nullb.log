@@ -1,0 +1,3 @@
+coupled n= 169 | ahat_med=0.0194 | rho_med=0.3675
+uncoupled n= 155 | ahat_med=0.0248 | rho_med=-0.1315
+-> results/w7_nullb_results.json

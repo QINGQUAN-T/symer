@@ -1,0 +1,9 @@
+<k>=4: Rf/N=0.6539±0.0042 HMF_reach=0.1491 dev=-11.97%±0.76
+<k>=6: Rf/N=0.7436±0.0016 HMF_reach=0.0930 dev=-10.24%±0.75
+<k>=8: Rf/N=0.7955±0.0010 HMF_reach=0.0619 dev=-8.85%±0.34
+<k>=12: Rf/N=0.8558±0.0011 HMF_reach=0.0339 dev=-6.42%±0.44
+<k>=20: Rf/N=0.9070±0.0010 HMF_reach=0.0163 dev=-4.35%±0.50
+<k>=40: Rf/N=0.9515±0.0007 HMF_reach=0.0067 dev=-2.47%±0.31
+sf tau=2.5: <k>=7.38 dev=-13.22%
+sf tau=3.0: <k>=7.06 dev=-11.40%
+-> results/w6_failure_boundary_data.json

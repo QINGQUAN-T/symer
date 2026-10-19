@@ -1,29 +1,31 @@
 {
-  "title": "symer: 符号核 v0 —— 链式两步配对过程的统一符号引擎（聚合/谣言两家族）",
-  "description": "可配置的符号动力学内核：同一套引擎覆盖逐步聚合（Flory/Carothers 家族）与两阶段谣言传播（Maki–Thompson/Daley–Kendall 改良）。载体因子在轨迹方程中完全消去；冻结库存律 (x1,x2)=(mu,alpha)/(alpha+mu) 为精确定理。含回归锚点与 Gillespie SSA 数值核（N=6e4 闸门：最大偏差 0.61%）。对应论文的 W1-W3 数值材料（尾部分类、有限 N 残差标度、构型模型失效边界、架构性 α-盲性）。",
-  "creators": [
-    {
-      "name": "Tang, Qingquan",
-      "affiliation": "Wuhan Textile University, Wuhan, China",
-      "orcid": "0000-0002-1519-1570"
-    }
-  ],
-  "license": "MIT",
-  "upload_type": "software",
-  "access_right": "open",
-  "pubdate": "2026-10-09",
-  "keywords": [
-    "statistical mechanics",
-    "rumor spreading",
-    "polymerization",
-    "exactly solvable",
-    "Gillespie algorithm"
-  ],
-  "related_identifiers": [
-    {
-      "identifier": "https://github.com/QINGQUAN-T/symer",
-      "relation": "isSupplementTo",
-      "scheme": "url"
-    }
-  ]
+ "title": "symer v0.1.3: symbolic kernel for chained two-step paired processes (step-growth aggregation / two-stage rumor cascades)",
+ "description": "Configurable symbolic-dynamics kernel: one engine covers stepwise aggregation (Flory/Carothers) and a modified two-stage Maki–Thompson/Daley–Kendall cascade. The common carrier factor cancels exactly in the trajectory equations, leaving fit-free closed forms. Contents (W-numbers map to paper sections): W1-W3 tail trichotomy and ledger laws (results/w3_law1_data.json, w3_law2_data.json, w3_smallg_data.json); W4 lone-spreader theorem (w4_lone_spreader_data.json); W5 frozen-inventory inversion, incl. CLI cli/x1_invert.py (w5_main_results.json); W6 network failure boundary and double-ledger CI (w6_failure_boundary_data.json, w6_network_ledger_data.json); W7 review revisions: gate values g†(μ) (w7_gstar.json), real-cascade inversion (w7_measure.json), negative controls C0-C4 (w7_negctl_results.json), Null B (w7_nullb_results.json), simulated-archive validation with degradation study (w7_simarchive_results.json), 10-generator-seed robustness sweep (w7_seed_variation.json), network CI (w7_network_ci.json); W8 f=3 nested-ledger conjecture checks (w8_f3_conjecture.json). Gillespie SSA cross-check (N=6e4, six seeds per cell): maximum ledger deviation 0.95% (x1 caliber). Frozen-inventory law: (x1,x2) = (mu/(alpha+mu), alpha/(alpha+mu)). Regression suite run_tests.py: 49/49. Seeds, parameter grids and acceptance gates are documented in each script header and in data_README.md (the SNAP file must be renamed to data/higgs-activity.txt.gz). Figure-level source data in results/*.json, figures in results/figs/, original run logs in logs/.",
+ "creators": [
+  {
+   "name": "Tang, Qingquan",
+   "affiliation": "Wuhan Textile University, Wuhan, China",
+   "orcid": "0000-0002-1519-1570"
+  }
+ ],
+ "license": "MIT",
+ "upload_type": "software",
+ "access_right": "open",
+ "version": "v0.1.3",
+ "pubdate": "2026-10-19",
+ "keywords": [
+  "statistical mechanics",
+  "rumor spreading",
+  "polymerization",
+  "exactly solvable",
+  "Gillespie algorithm",
+  "reproducibility"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/QINGQUAN-T/symer",
+   "relation": "isSupplementTo",
+   "scheme": "url"
+  }
+ ]
 }

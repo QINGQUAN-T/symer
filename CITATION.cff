@@ -24,7 +24,7 @@ identifiers:
     value: https://zenodo.org/records/23282848 # FIXME: replace with the NEW version record DOI minted for v0.1.1
   - description: Concept DOI (all versions of symer)
     type: doi
-    value: 10.5281/zenodo.23282847
+    value: 10.5281/zenodo.23456046
 keywords:
   - statistical mechanics
   - rumor spreading

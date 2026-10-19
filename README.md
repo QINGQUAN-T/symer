@@ -49,7 +49,7 @@ tests/
   test_rumor_gate1.py      R1–R8 引擎闭式解、α 盲性、冻结库存律、ODE/SSA 交叉（33 项）
 examples/
   demo_deviations.py       模型锁定论证演示（备忘录 §五：S×S 出传通道 + 账本指纹）
-scripts/             论文级可复现脚本与图级数据生成器（v0.1.1–0.1.2，见下表）
+scripts/             论文级可复现脚本与图级数据生成器（v0.1.1–0.1.3，见下表）
 results/             图级源数据 JSON 与图 PDF（results/figs/）
 logs/                原始运行日志（相对路径记录）
 cli/                 x1_invert.py 真实级联反演命令行
@@ -120,6 +120,7 @@ results/w7_measure.json。
 | `w7_gstar.py` | g* 相图与分支检查 | §S×R, Table 1 |
 | `w7_measure.py` | 实测级联统计量 | §Data |
 | `w7_figs.py` | 论文图 3–10 统一渲染（图级数据在 results/） | Figs. 3–10 |
+| `w7_seed_variation.py` | 模拟档案种子稳健性扫描（10 生成器种子 × 18 分支，匹配阈值） | §7.3 |
 | `w3_lib.py` / `w5_invert.py` | 共享引擎与反演管线 | — |
 
 运行方式（先按 [data_README.md](data_README.md) 下载 Higgs-Twitter 数据到 `data/`）：
@@ -149,12 +150,14 @@ PDF 分别在 `results/*.json` 与 `results/figs/`，原始运行日志在 `logs
   网格、原始日志与结构化输出随 Zenodo 归档包发布：
   v0.1.0 基础归档 [10.5281/zenodo.23282848](https://doi.org/10.5281/zenodo.23282848)；
   v0.1.1 首轮审稿修订归档；v0.1.2 二轮修订归档（缺陷脚本修复、图级数据补齐、
-  负控制扩充 C4），DOI 见本版本 Release 页，挂在概念 DOI
+  负控制扩充 C4）；v0.1.3 三轮修订归档（种子稳健性扫描 w7_seed_variation、
+  测试与定理 1 表述对齐并新增 R8b2 账本守恒断言（49 项）、元数据与论文数值
+  一致性修正），DOI 见本版本 Release 页，挂在概念 DOI
   [10.5281/zenodo.23282847](https://doi.org/10.5281/zenodo.23282847) 下）。
 - **真实级联数据**：`cli/x1_invert.py` 默认读取
   [SNAP Higgs-Twitter](https://snap.stanford.edu/data/higgs-twitter.html)
   的 `higgs-activity_time.txt.gz`（354,930 转推事件，298 条多用户级联）。
-- **引用**：见 `CITATION.cff`。引用最新版本（v0.1.2）请用其版本 DOI
+- **引用**：见 `CITATION.cff`。引用最新版本（v0.1.3）请用其版本 DOI
   （见 Release 页）；引用任意版本可用概念 DOI：[10.5281/zenodo.23282847](https://doi.org/10.5281/zenodo.23282847)。
 
 ## 许可

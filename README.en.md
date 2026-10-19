@@ -77,6 +77,6 @@ Run (see `data_README.md` for the SNAP Higgs-Twitter download step):
 **Tang, Q. (2026). *symer*: symbolic kernel v0 for chained two-step pairing
 processes (aggregation / rumor families). Zenodo.**
 Base archive (v0.1.0): [10.5281/zenodo.23282848](https://doi.org/10.5281/zenodo.23282848);
-v0.1.1 version DOI: see the Release page; concept DOI (all versions):
+v0.1.3 version DOI: see the Release page; concept DOI (all versions):
 [10.5281/zenodo.23282847](https://doi.org/10.5281/zenodo.23282847).
 Machine-readable metadata: `CITATION.cff`. License: MIT.

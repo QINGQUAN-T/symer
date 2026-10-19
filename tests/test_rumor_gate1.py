@@ -5,7 +5,7 @@ R2  合并层 alpha 盲性（符号证明）：dS/dt = k1 S i - k2 S^2，不含 
 R3  合并层轨迹：dS/di = -1 + mu S/i（与聚合物引擎同族，alpha/2 <-> mu）；
 R4  职业层闭式解 + 残差恒 0（含 gamma=1 对数分支）；
 R5  冻结库存律（符号）：x1 = mu/(alpha+mu) 与种子无关；x2 = alpha/(alpha+mu)；
-R6  数值交叉：ODE 积分 vs 闭式解 vs 库存律（mu<1 有限时刻饱和）；
+R6  数值交叉：ODE 积分 vs 闭式解 vs 库存律（mu<1 幂律尾渐近饱和）；
 R7  mu>=1 代数尾：S/i -> 1/(mu-1)，库存律仍收敛；
 R8  Gillespie SSA 抽查：终态出传者职业构成 vs (mu, alpha)/(alpha+mu)。
 """
@@ -153,7 +153,7 @@ def run_mean_field(alpha, mu, eps, t_max=2e4):
 
 
 def test_numeric_crosscheck():
-    """R6：mu<1 有限时刻饱和 + 库存律数值验证 + 闭式解沿轨迹吻合。"""
+    """R6：mu<1 渐近饱和（无有限时刻冻结，定理 1）+ 库存律数值验证 + 闭式解沿轨迹吻合。"""
     cases = [(0.8, 0.3, 1e-3, 1.1), (0.6, 0.4, 1e-3, 1.0), (2.0, 0.5, 1e-2, 2.5)]
     for alpha, mu, eps, gamma in cases:
         sol, hit, yf = run_mean_field(alpha, mu, eps)
@@ -162,7 +162,7 @@ def test_numeric_crosscheck():
         x2_expect = alpha / gamma
         tag = f"(alpha={alpha}, mu={mu}, eps={eps})"
         if mu < 1:
-            check(f"R6a{tag} mu<1 有限时刻饱和（i->0）", hit and i_f < 2e-8,
+            check(f"R6a{tag} mu<1 渐近饱和（数值 i 低于 1e-8；无有限时刻冻结）", hit and i_f < 2e-8,
                   f"t_end={sol.t[-1]:.3f}")
         # 终端账本：出传者池分解 x1, x2——用闭式积分流验证：
         # 数值上以 -mu*s1/i 与 -mu*s2/i 对 i 积分（伴随方程）得到 x1, x2
@@ -274,6 +274,9 @@ def test_ssa_sanity():
           abs(frac2 - law) < 0.03, f"x2份={frac2:.4f} vs 律={law:.4f}")
     check("R8b SSA 终态无知者占比小（mu<1 近饱和）", i_f_frac < 0.10,
           f"i_f/N = {i_f_frac:.4f}")
+    check("R8b2 SSA 终态账本守恒 x1+x2=N-1（定理 8，有限 N 恰余一个传播者）",
+          (x1_tot + x2_tot) == (N - 1) * seeds,
+          f"x1+x2={x1_tot + x2_tot} vs (N-1)*seeds={(N - 1) * seeds}")
     print(f"      SSA 详情: N={N}, seeds={seeds}, i_f/N={i_f_frac:.4f}, "
           f"x1={x1_tot}, x2={x2_tot}")
 

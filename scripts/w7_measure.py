@@ -182,7 +182,7 @@ def main():
             'pipeline': 'w5_invert.analyze_cascade (bins=16), guards: >=30 events, '
                         'span>=2theta, dormancy censor 24h; ledger pool = P-1 (Theorem 8)',
             'bootstrap': 'cascade-level cluster bootstrap, B=2000, seed=20261018',
-            'version': 'symer v0.1.2',
+            'version': 'symer v0.1.3',
         },
         'theta': [{'theta_h': th_h, **res[f'theta_{th_h:g}h']} for th_h in (2.0, 6.0, 24.0)],
         're_view': {'theta_h': 6.0, **res_re['theta_6h']},

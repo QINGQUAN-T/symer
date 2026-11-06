@@ -8,8 +8,9 @@
   表达式 ``rate``（速率表达式须已含伙伴池因子与对称因子）。
 * ``conserved``: 守恒律列表 ``(expr, value)``，表示 expr == value；
   用于消元与冻结线（终端条件）的配置化。
-* ``carrier``: 预期在轨迹方程中完全消去的公共因子——聚合家族是燃料池
-  [A]（消耗型），谣言家族是传播者池 S（催化型）。这是"催化家族接口"
+* ``carrier``: 预期在轨迹方程中完全消去的公共因子（common partner-pool
+  factor，字段名沿用 carrier）——聚合家族是消耗型 [A] 池（A-单体池），
+  谣言家族是传播者池 S（催化型）。这是"催化家族接口"
   的核心：两类家族的区分只体现在 carrier 是否被通道消耗，引擎本身不变。
 """
 from dataclasses import dataclass, field
@@ -39,7 +40,7 @@ class ReactionSystem:
     params: dict            # 名称 -> sympy 符号
     channels: list          # Channel 列表
     conserved: list         # [(表达式, 值), ...]
-    carrier: sp.Expr        # 预期消去的公共载体因子
+    carrier: sp.Expr        # 预期消去的公共因子（API 字段名沿用 carrier）
     time: sp.Symbol = field(default_factory=lambda: sp.Symbol("t", positive=True))
 
     # ------------------------------------------------------------------

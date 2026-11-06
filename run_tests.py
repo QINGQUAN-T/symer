@@ -1,4 +1,5 @@
-"""一键回归：聚合物三锚点 + 谣言 Gate-1（符号 / 数值 / SSA 三段）。"""
+"""一键回归：聚合物三锚点 + 谣言 Gate-1（符号 / 数值 / SSA 三段）。
+（A2SP 谣言家族的闸门 1 验证；49 项，见 logs/run_tests.log。）"""
 import subprocess
 import sys
 from pathlib import Path

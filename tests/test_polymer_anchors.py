@@ -33,7 +33,7 @@ def test_trajectory_anchor():
     alpha = sysm.params["alpha"]
 
     ok_carrier, slope = carrier_cancellation_check(sysm, b0, b1)
-    check("T3a 载体 [A] 完全消去", ok_carrier)
+    check("T3a 公共因子 [A] 完全消去", ok_carrier)
 
     expected = -1 + alpha * b1 / (2 * b0)
     check("T3b 轨迹方程 = -1 + (alpha/2) b1/b0", sp.simplify(slope - expected) == 0,

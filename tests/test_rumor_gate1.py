@@ -1,6 +1,6 @@
 """谣言配置 Gate-1 验证（W1 闸门 1 的谣言侧）。
 
-R1  引擎推导：ds1/di = -1 + (alpha+mu) s1/i，载体 S=s1+s2 完全消去；
+R1  引擎推导：ds1/di = -1 + (alpha+mu) s1/i，公共因子 S=s1+s2 完全消去；
 R2  合并层 alpha 盲性（符号证明）：dS/dt = k1 S i - k2 S^2，不含 alpha；
 R3  合并层轨迹：dS/di = -1 + mu S/i（与聚合物引擎同族，alpha/2 <-> mu）；
 R4  职业层闭式解 + 残差恒 0（含 gamma=1 对数分支）；
@@ -31,14 +31,14 @@ def check(name, cond, detail=""):
 
 # ----------------------------------------------------------------------
 def test_engine_and_blindness():
-    """R1-R3：引擎推导、载体消去、合并层 alpha 盲性（符号级）。"""
+    """R1-R3：引擎推导、公共因子消去、合并层 alpha 盲性（符号级）。"""
     sysm = build_rumor()
     i, s1, s2, x = (sysm.states[n] for n in ("i", "s1", "s2", "x"))
     alpha, mu, k1 = (sysm.params[n] for n in ("alpha", "mu", "k1"))
     k2 = mu * k1
 
     ok_carrier, slope = carrier_cancellation_check(sysm, i, s1)
-    check("R1a 载体 S=s1+s2 完全消去", ok_carrier)
+    check("R1a 公共因子 S=s1+s2 完全消去", ok_carrier)
     gamma = alpha + mu
     expected = -1 + gamma * s1 / i
     check("R1b 职业层轨迹方程 = -1 + (alpha+mu) s1/i",

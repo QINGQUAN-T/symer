@@ -1,7 +1,7 @@
 """偏离论证演示（配套《W1 备忘录》§五，2026-10-08 确认版）。
 
 Demo A（偏离一）：计划书原通道（S2×S1-only 出传）的三个失败 vs 锁定版（任意 S×S hearer-stifling）
-  A1 引擎结构：锁定版 ds1/di = -1 + (alpha+mu) s1/i（载体 S 消去）；
+  A1 引擎结构：锁定版 ds1/di = -1 + (alpha+mu) s1/i（公共因子 S 消去）；
      计划书版 ds1/di = -1 + alpha s1/i + mu*s1*s2/(S*i)（含分工比，(i,s1) 不封闭）
   A2 alpha 是否泄漏进合并层：锁定版 S(t) 对 alpha=0.5/3 最大偏差 1.2e-11（alpha 盲）；
      计划书版 0.573（alpha 泄漏 57%）

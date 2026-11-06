@@ -1,6 +1,9 @@
 # Data — Higgs-Twitter (SNAP)
 
-The review-revision scripts read the public SNAP Higgs-Twitter dataset.
+The paper-reproduction scripts read the public SNAP Higgs-Twitter dataset
+(companion paper: *Terminal-state theorems for a two-stage Maki–Thompson rumor
+model: final size, stifler composition, and non-identifiability from pooled
+statistics*, preprint doi [10.48550/arXiv.2610.41206](https://doi.org/10.48550/arXiv.2610.41206)).
 Download both files into a local `data/` directory at the repository root:
 
 ```

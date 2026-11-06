@@ -1,8 +1,8 @@
 """聚合物家族配置：AA+BB 逐步缩聚的两步动力学（ChemRxiv 原文模型）。
 
 状态（以 [BB]_0 归一）：
-    b0 : 未反应 BB；b1 : 半反应 B*（冻结库存载体）；b2 : 全反应。
-燃料池：sigma = [A]/[BB]_0 = 2(r-1) + 2 b0 + b1（消耗型载体）。
+    b0 : 未反应 BB；b1 : 半反应 B*（冻结线上的库存）；b2 : 全反应。
+消耗型公共因子（A-单体池）：sigma = [A]/[BB]_0 = 2(r-1) + 2 b0 + b1。
 通道：
     P1: BB + A -> B*      速率 2 k sigma b0   （对称因子 2：两个等价 B 基团）
     P2: B* + A -> b2      速率 alpha k sigma b1（k2 = alpha k）
@@ -25,7 +25,7 @@ def build_polymer(alpha=None, r=None, k=None):
     k = k if k is not None else sp.Symbol("k", positive=True)
 
     b0, b1, b2 = (sp.Symbol(n, nonnegative=True) for n in ("b0", "b1", "b2"))
-    sigma = sp.Symbol("sigma", nonnegative=True)  # [A]/[BB]_0，消耗型燃料
+    sigma = sp.Symbol("sigma", nonnegative=True)  # [A]/[BB]_0，消耗型公共因子
 
     channels = [
         Channel(
@@ -49,10 +49,10 @@ def build_polymer(alpha=None, r=None, k=None):
         params={"alpha": alpha, "r": r, "k": k},
         channels=channels,
         conserved=[
-            (sigma - (2 * (r - 1) + 2 * b0 + b1), 0),   # 燃料账本 sigma = 2(r-1)+2b0+b1
+            (sigma - (2 * (r - 1) + 2 * b0 + b1), 0),   # [A] 守恒 sigma = 2(r-1)+2b0+b1
             (pB - (b1 / 2 + b2), 0),                     # B 基团守恒 S7.3
         ],
-        carrier=sigma,  # 消耗型载体：轨迹方程中必须完全消去
+        carrier=sigma,  # 消耗型公共因子：轨迹方程中必须完全消去
     )
     return system
 

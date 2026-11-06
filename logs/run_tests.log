@@ -1,6 +1,6 @@
 
 ===== 聚合物回归锚点 =====
-[PASS] T3a 载体 [A] 完全消去 
+[PASS] T3a 公共因子 [A] 完全消去 
 [PASS] T3b 轨迹方程 = -1 + (alpha/2) b1/b0 slope = (alpha*b1/2 - b0)/b0
 [PASS] T3c 闭式解 == 原文(6)（IC + 数值采样 + 残差） sol = 2*(b0 - exp(alpha*log(b0)/2))/(alpha - 2)
 [PASS] T3d 残差恒 0 
@@ -20,7 +20,7 @@
 聚合物锚点：16/16 通过
 
 ===== 谣言 Gate-1 符号段 =====
-[PASS] R1a 载体 S=s1+s2 完全消去 
+[PASS] R1a 公共因子 S=s1+s2 完全消去 
 [PASS] R1b 职业层轨迹方程 = -1 + (alpha+mu) s1/i slope = (alpha*s1 - i + mu*s1)/i
 [PASS] R2a 合并层 dS/dt = k1 S i - k2 S^2 
 [PASS] R2b alpha 盲（d(dS/dt)/d alpha = 0） 

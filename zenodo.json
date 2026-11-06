@@ -1,0 +1,39 @@
+{
+ "title": "symer v0.1.4: symbolic kernel for asymmetric two-step pairing (A2SP) processes (step-growth polymerization / two-stage rumor cascades)",
+ "description": "Configurable symbolic-dynamics kernel implementing the asymmetric two-step pairing (A2SP) mechanism of the companion paper: every elementary event is a pairwise contact, the two steps draw on distinct partner pools, and every channel rate is multiplied by one common partner-pool factor. One engine covers step-growth polymerization (AA+BB polycondensation, Flory/Carothers family, consumable common factor [A]) and a modified two-stage Maki–Thompson/Daley–Kendall cascade (catalytic common factor S). The common factor cancels exactly in the trajectory equations, leaving fit-free closed forms. Contents (W-numbers map to paper sections): W1-W3 tail trichotomy and ledger laws (results/w3_law1_data.json, w3_law2_data.json, w3_smallg_data.json); W4 lone-spreader theorem (w4_lone_spreader_data.json); W5 final-size inversion, incl. CLI cli/x1_invert.py (w5_main_results.json); W6 network failure boundary and double-ledger CI (w6_failure_boundary_data.json, w6_network_ledger_data.json); W7 review revisions: gate values g†(μ) (w7_gstar.json), real-cascade inversion (w7_measure.json), negative controls C0-C4 (w7_negctl_results.json), Null B (w7_nullb_results.json), simulated-archive validation with degradation study (w7_simarchive_results.json), 10-generator-seed robustness sweep (w7_seed_variation.json), network CI (w7_network_ci.json); W8 f=3 nested-ledger conjecture checks (w8_f3_conjecture.json). Gillespie SSA cross-check (N=6e4, six seeds per cell): maximum ledger deviation 0.95% (x1 caliber). Final-size (terminal stifler-composition) law: (x1,x2) = (mu/(alpha+mu), alpha/(alpha+mu)). Regression suite run_tests.py: 49/49. Seeds, parameter grids and acceptance gates are documented in each script header and in data_README.md (the SNAP file must be renamed to data/higgs-activity.txt.gz). Figure-level source data in results/*.json, figures in results/figs/, original run logs in logs/. Companion paper: Q. Tang, 'Terminal-state theorems for a two-stage Maki–Thompson rumor model: final size, stifler composition, and non-identifiability from pooled statistics' (preprint, doi 10.48550/arXiv.2610.41206).",
+ "creators": [
+  {
+   "name": "Tang, Qingquan",
+   "affiliation": "Wuhan Textile University, Wuhan, China",
+   "orcid": "0000-0002-1519-1570"
+  }
+ ],
+ "license": "MIT",
+ "upload_type": "software",
+ "access_right": "open",
+ "version": "v0.1.4",
+ "pubdate": "2026-11-06",
+ "keywords": [
+  "statistical mechanics",
+  "rumor spreading",
+  "Maki–Thompson model",
+  "asymmetric two-step pairing (A2SP)",
+  "polymerization",
+  "exactly solvable",
+  "Gillespie algorithm",
+  "reproducibility"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.48550/arXiv.2610.41206",
+   "relation": "isSupplementTo",
+   "scheme": "doi",
+   "resource_type": "preprint"
+  },
+  {
+   "identifier": "https://github.com/QINGQUAN-T/symer",
+   "relation": "isSupplementTo",
+   "scheme": "url"
+  }
+ ]
+}

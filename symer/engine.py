@@ -1,10 +1,10 @@
-"""符号引擎：轨迹方程推导、闭式求解、残差校验、载体消去验证。
+"""符号引擎：轨迹方程推导、闭式求解、残差校验、公共因子消去验证。
 
 数学内核（两个家族共用的"动力学引擎"范式）
 ------------------------------------------
 设驱动变量 X（单调耗尽，如聚合 b0、谣言无知者 i）与被跟踪变量 Y
 （中间态，如 B* 库存 b1、新传播者 s1）。若所有通道速率都携带同一公共
-载体因子 C（聚合 [A]；谣言 S1+S2），则
+因子 C（common partner-pool factor：聚合 [A]；谣言 S1+S2），则
 
     dY/dX = (sum stoich_Y * rate) / (sum stoich_X * rate)
 
@@ -23,12 +23,12 @@ class TrajectoryResult:
     slope: sp.Expr          # d(tracked)/d(driver) 的右端 f(tracked, driver)
     solution: sp.Expr       # tracked(driver) 闭式解（含初条件）
     residual: sp.Expr       # 代回 ODE 后的残差（应为 0）
-    carrier_free: bool      # 载体因子是否完全消去
+    carrier_free: bool      # 公共因子是否完全消去（API 字段名沿用 carrier）
 
 
 # ----------------------------------------------------------------------
 def derive_trajectory(system, driver, tracked):
-    """从通道清单自动推导 d(tracked)/d(driver)，并校验载体消去。"""
+    """从通道清单自动推导 d(tracked)/d(driver)，并校验公共因子消去。"""
     rhs = system.rhs()
     num = sp.simplify(rhs[tracked])
     den = sp.simplify(rhs[driver])
@@ -38,7 +38,7 @@ def derive_trajectory(system, driver, tracked):
 
 
 def carrier_cancellation_check(system, driver, tracked):
-    """载体因子必须从轨迹方程斜率中完全消失。"""
+    """公共因子必须从轨迹方程斜率中完全消失。"""
     slope = derive_trajectory(system, driver, tracked)
     return not slope.has(system.carrier), slope
 

@@ -27,8 +27,7 @@
   {
    "identifier": "10.48550/arXiv.2610.41206",
    "relation": "isSupplementTo",
-   "scheme": "doi",
-   "resource_type": "preprint"
+   "scheme": "doi"
   },
   {
    "identifier": "https://github.com/QINGQUAN-T/symer",
@@ -37,4 +36,5 @@
   }
  ]
 }
+
 
